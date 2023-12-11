@@ -1,0 +1,316 @@
+/* **************GENERAL STYLES****************** */
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family:  Helvetica, Arial, sans-serif;
+}
+
+/* **************NAV STYLES****************** */
+nav{
+    display: flex;
+    padding: 15px 40px;
+    align-items: center;
+    box-shadow: 0px 0px 2px #333;
+}
+
+nav #menu{
+    display: flex;
+    align-items: center;
+    width: calc(100% - 90px);
+}
+
+nav #toggleButton, .divider, .menuOverlay{
+    display: none;
+}
+
+nav #logo img{
+    width: 50px;
+}
+
+nav #logo{
+    margin-right: 40px;
+}
+
+nav #navLinks1{
+    margin-right: auto;
+    font-weight: bold;
+}
+nav #navLinks1 .nav-link{
+    text-decoration: none;
+    color: #222;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    font-size: 0.95rem;
+    margin-left: 15px;
+}
+nav #navLinks1 .nav-link:hover{
+    color: green;
+}
+
+nav #navLinks2{
+    display: flex;
+}
+
+nav #findStore{
+    color: #222;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.9rem;
+    margin-left: 15px;
+}
+nav #findStore:hover{
+    color: green;
+}
+
+nav #findStore i{
+    font-size: 1.2rem;
+    margin-right: 6px;
+}
+nav #signIn, nav #joinNow{
+    color: #222;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.95rem;
+    border: 1px solid;
+    padding: 8px 12px;
+    border-radius: 15px;
+    margin-left: 15px;
+    white-space: 10px;
+}
+
+nav #joinNow{
+    color: #fff;
+    background-color: #222;
+    margin-left: 10px;
+}
+nav #joinNow:hover{
+    background-color: rgba(34, 34, 34, 0.9);
+}
+nav #signIn:hover{
+    background-color: rgb(230, 230, 230);
+}
+
+/*Reward Sections***************************/
+section#rewards{
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #d4e9e2;
+    gap: 30px;
+    color: #1e3932;
+}
+section#rewards h2{
+    text-align: center;
+}
+section#rewards p{
+    font-size: 1.2rem;
+    text-align: center;
+}
+section#rewards a{
+    text-decoration: steelblue;
+}
+
+/*DAY BOOSTERS SECTION STYLES*/
+section#dayBoosters{
+    display: flex;
+    background-color: #96b2e1;
+    margin-top: 35px;
+}
+section#dayBoosters>*{
+    width: 50%;
+}
+section#dayBoosters .imageContent img{
+    max-width: 100%;
+}
+section#dayBoosters .textContent{
+    padding: 8% 5%;
+    text-align: center;
+    color: #1e3932;
+}
+section#dayBoosters .textContent h2{
+    font-size: 2.9rem;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+}
+section#dayBoosters .textContent p{
+    font-size: 1.5rem;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+section#dayBoosters .textContent a{
+    color:#1e3932;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.95rem;
+    border: 1px solid;
+    padding: 8px 12px;
+    border-radius: 15px;
+    margin-left: 15px;
+    white-space: 10px;
+}
+
+/***FOOTER STYLES****************************/
+footer{
+    padding: 30px 5%;
+    box-shadow: inset 0 4px 3px -3px rgba(0, 0, 0, 0.1), inset 0 4px 3px -3px rgba(0, 0, 0, 0.7);
+    margin-top: 30px;
+}
+footer #quickLinks{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+}
+footer #quickLinks h2{
+    /*color: #222; */
+    font-size: 1.2rem;
+    font-weight: normal;
+    margin-bottom: 20px;
+}
+footer #quickLinks h2 i{
+    display: none;
+}
+footer #quickLinks ul{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+footer #quickLinks a{
+    text-decoration: #666;
+}
+
+/****For Mobile*******************************/
+
+@media all and (max-width: 1023px){
+    footer #quickLinks{
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    footer #quickLinks h2{
+        display: flex;
+    }
+    footer #quickLinks h2 i{
+        display: initial;
+        margin-left: auto;
+    }
+    /* footer #quickLinks ul{
+        height: 0;
+        overflow: hidden;
+        transition: height .8s;
+    }
+    footer #quickLinks ul.active{
+        height: fit-content;
+    } */
+
+}
+
+@media all and (max-width: 772px){
+    body.menuActive{
+        height: 100vh;
+        overflow: hidden;
+    }
+    nav{
+        justify-content: space-between;
+    }
+    nav #toggleButton{
+        display: initial;
+    }
+    nav #toggleButton i{
+        font-size: 1.5rem;
+        color: #666;
+    }
+    nav #menu{
+        display: flex;
+        align-items: center;
+        position: fixed;
+        top: 84px;
+        right: -85%;
+        height: calc(100vh - 84px);
+        width: 84%;
+        background-color: #fff;
+        /* border: 1px solid; */
+
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 50px 30px;
+        transition: right .5s cubic-bezier(0.075, 0.82, 0.165, 1);
+        box-shadow: inset 0 4px 3px -3px rgba(0, 0, 0, 0.1), inset 0 4px 3px -3px rgba(0, 0, 0, 0.7);
+        display: none;
+    }
+    nav #menu.active{
+        display: initial;
+        right: 0;
+    }
+    nav .menuOverlay{
+        position: absolute;
+        top: 84px;
+        left: 0;
+        width: 100%;
+        background-color: transparent;
+        transition: background-color .8s;
+        display: initial;
+    }
+    nav .menuOverlay.active{
+        height: calc(100vh - 84px);
+        background-color: rgba(0, 0, 0, 0.45);
+    }
+
+    nav #navLinks1{
+        display: flex;
+        flex-direction: column;
+    }
+    nav #navLinks1 .nav-link{
+        font-size: 1.3rem;
+        margin-bottom: 40px;
+        text-transform: capitalize;
+        font-weight: normal;
+    } 
+    nav .divider{
+        display: initial;
+        height: 2px;
+        width: 95%;
+        background-color: #ddd;
+    }
+    nav #navLinks2{
+        margin-top: 35px;
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    nav #findStore{
+        order: 2;
+    }
+
+    /*MOBILE REWARD SECTION STYLES*******************/
+    section#rewards h2{
+        font-size: 1.35rem;
+        line-height: 1.5;
+    }
+    section#rewards p{
+        font-size: 1.05rem;
+        line-height: 1.5;
+    }
+}
+
+/****MOBILE REWARDS SELECTION STYLES*********************/
+@media all and (max-width: 767px) {
+    section#dayBoosters{
+        flex-direction: column;
+    }
+    section#dayBoosters>*{
+        width: 100%;
+    }
+    section#dayBoosters div.textContent h2{
+        font-size: 1.8rem;
+    }
+    section#dayBoosters div.imageContent{
+        order: -1;
+    }
+}
